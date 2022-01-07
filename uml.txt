@@ -1,0 +1,28 @@
+// Cool Class Diagram
+// ------------------
+
+
+[IntLinkedList|-last: Node; -i:int|push(int i): void;isEmpty(): boolean;isFull(): boolean; top(): int;pop(): int]
+
+[≪RhymersFactory≫;DefaultRhymersFactory|getStandardRhymer();getFalseRhymer();getFIFORhymer();getHanoiRhymer()]
+
+[Node|-value: int; -prev: Node; -next: Node|getPrev(): Node;setPrev(Node prev): void;getNext(): Node;setNext(Node next): void;getValue(): int]
+
+[IntLinkedList]1<>-0..*[Node]
+
+[DefaultCountingOutRhymer|-numbers: array(int);-total: int|countIn(int in): void;callCheck(): boolean;isFull(): boolean;peekaboo(): int;countOut(): int;getTotal(): int]
+
+[FIFORhymer|-temp: DefaultCountingOutRhymer]
+
+[HanoiRhymer|-totalRejected: int|reportRejected(): int]
+
+[DefaultCountingOutRhymer]^[FIFORhymer]
+[DefaultCountingOutRhymer]^[HanoiRhymer]
+
+[DefaultRhymersFactory]-[DefaultCountingOutRhymer]
+[DefaultRhymersFactory]-[FIFORhymer]
+[DefaultRhymersFactory]-[HanoiRhymer]
+
+[RhymersDemo]1-1[DefaultRhymersFactory]
+
+[RhymersDemo|main(): void;testRhymers(RhymersFactory factory): void]
