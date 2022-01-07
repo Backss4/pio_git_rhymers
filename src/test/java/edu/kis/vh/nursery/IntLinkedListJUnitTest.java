@@ -7,6 +7,12 @@ import org.junit.Test;
 public class IntLinkedListJUnitTest {
 
     @Test
+    public void testIsEmpty() {
+        IntLinkedList list = new IntLinkedList();
+        Assert.assertTrue(list.isEmpty());
+    }
+
+    @Test
     public void testPush() {
         IntLinkedList list = new IntLinkedList();
         int expectedValue = 5;
