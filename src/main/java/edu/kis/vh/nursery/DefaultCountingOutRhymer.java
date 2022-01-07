@@ -19,12 +19,14 @@ public class DefaultCountingOutRhymer {
         return total == 11;
     }
 
+    //TO DO: lepsze byłoby użycie wyjątków zamiast -1
     protected int peekaboo() {
         if (callCheck())
             return -1;
         return numbers[total];
     }
 
+    //TO DO: lepsze byłoby użycie wyjątków zamiast -1
     public int countOut() {
         if (callCheck())
             return -1;
