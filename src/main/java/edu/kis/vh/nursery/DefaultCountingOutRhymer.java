@@ -2,9 +2,13 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    private int[] numbers = new int[12];
+    private static final int SIZE = 12;
+    private static final int INITIAL_VALUE = -1;
+    private static final int FAILURE = -1;
+    private static final int MAX_SIZE = 12;
 
-    private int total = -1;
+    private final int[] numbers = new int[SIZE];
+    private int total = INITIAL_VALUE;
 
     //TODO: wyrzucenie wyjątku kiedy nie ma miejsca
     public void countIn(int in) {
@@ -14,24 +18,24 @@ public class DefaultCountingOutRhymer {
 
     //TODO: zmienić nazwę na isEmpty?
     public boolean callCheck() {
-        return total == -1;
+        return total == INITIAL_VALUE;
     }
 
     public boolean isFull() {
-        return total == 11;
+        return total == (MAX_SIZE - 1);
     }
 
     //TODO: lepsze byłoby użycie wyjątków zamiast -1
     protected int peekaboo() {
         if (callCheck())
-            return -1;
+            return FAILURE;
         return numbers[total];
     }
 
     //TODO: lepsze byłoby użycie wyjątków zamiast -1
     public int countOut() {
         if (callCheck())
-            return -1;
+            return FAILURE;
         return numbers[total--];
     }
 

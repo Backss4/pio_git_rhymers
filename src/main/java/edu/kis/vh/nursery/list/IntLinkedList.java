@@ -8,7 +8,7 @@ package edu.kis.vh.nursery.list;
 public class IntLinkedList {
     private static class Node {
 
-        private int value;
+        private final int value;
         private Node prev, next;
 
         public Node(int i) {
@@ -36,7 +36,7 @@ public class IntLinkedList {
         }
     }
 
-
+    private static final int FAILURE = -1;
     private Node last;
     private int i;
 
@@ -77,7 +77,7 @@ public class IntLinkedList {
      */
     public int top() {
         if (isEmpty())
-            return -1;
+            return FAILURE;
         return last.getValue();
     }
 
@@ -88,7 +88,7 @@ public class IntLinkedList {
      */
     public int pop() {
         if (isEmpty())
-            return -1;
+            return FAILURE;
         int ret = last.getValue();
         last = last.getPrev();
         return ret;
