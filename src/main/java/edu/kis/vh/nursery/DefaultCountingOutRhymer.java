@@ -25,13 +25,13 @@ public class DefaultCountingOutRhymer {
 
     protected int peekaboo() {
         if (callCheck())
-            return INITIAL_VALUE;
+            return FAILURE;
         return numbers[total];
     }
 
     public int countOut() {
         if (callCheck())
-            return INITIAL_VALUE;
+            return FAILURE;
         return numbers[total--];
     }
 
