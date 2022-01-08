@@ -12,7 +12,6 @@ public class DefaultCountingOutRhymer {
             numbers[++total] = in;
     }
 
-
     //TODO: zmienić nazwę na isEmpty?
     public boolean callCheck() {
         return total == -1;
