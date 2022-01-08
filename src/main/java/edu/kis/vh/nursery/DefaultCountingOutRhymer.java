@@ -2,10 +2,10 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    public static final int SIZE = 12;
-    public static final int INITIAL_VALUE = -1;
+    private static final int SIZE = 12;
+    private static final int INITIAL_VALUE = -1;
     private static final int FAILURE = -1;
-    public static final int MAX_SIZE = 12;
+    private static final int MAX_SIZE = 12;
 
     private final int[] numbers = new int[SIZE];
     private int total = INITIAL_VALUE;
@@ -15,7 +15,6 @@ public class DefaultCountingOutRhymer {
         if (!isFull())
             numbers[++total] = in;
     }
-
 
     //TODO: zmienić nazwę na isEmpty?
     public boolean callCheck() {
