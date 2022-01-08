@@ -4,10 +4,11 @@ public class DefaultCountingOutRhymer {
 
     public static final int SIZE = 12;
     public static final int INITIAL_VALUE = -1;
-    public static final int MAX_SIZE = 11;
-    private int[] numbers = new int[SIZE];
+    private static final int FAILURE = -1;
+    public static final int MAX_SIZE = 12;
 
-    public int total = INITIAL_VALUE;
+    private final int[] numbers = new int[SIZE];
+    private int total = INITIAL_VALUE;
 
     public void countIn(int in) {
         if (!isFull())
@@ -19,7 +20,7 @@ public class DefaultCountingOutRhymer {
     }
 
     public boolean isFull() {
-        return total == MAX_SIZE;
+        return total == (MAX_SIZE - 1);
     }
 
     protected int peekaboo() {
@@ -34,4 +35,7 @@ public class DefaultCountingOutRhymer {
         return numbers[total--];
     }
 
+    public int getTotal() {
+        return total;
+    }
 }
