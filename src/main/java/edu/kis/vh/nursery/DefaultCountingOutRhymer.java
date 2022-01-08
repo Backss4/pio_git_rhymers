@@ -10,11 +10,14 @@ public class DefaultCountingOutRhymer {
     private final int[] numbers = new int[SIZE];
     private int total = INITIAL_VALUE;
 
+    //TODO: wyrzucenie wyjątku kiedy nie ma miejsca
     public void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
 
+
+    //TODO: zmienić nazwę na isEmpty?
     public boolean callCheck() {
         return total == INITIAL_VALUE;
     }
@@ -23,12 +26,14 @@ public class DefaultCountingOutRhymer {
         return total == (MAX_SIZE - 1);
     }
 
+    //TODO: lepsze byłoby użycie wyjątków zamiast -1
     protected int peekaboo() {
         if (callCheck())
             return FAILURE;
         return numbers[total];
     }
 
+    //TODO: lepsze byłoby użycie wyjątków zamiast -1
     public int countOut() {
         if (callCheck())
             return FAILURE;
