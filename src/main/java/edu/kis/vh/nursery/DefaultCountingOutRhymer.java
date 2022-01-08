@@ -22,7 +22,7 @@ public class DefaultCountingOutRhymer {
     }
 
     public boolean isFull() {
-        return total == (MAX_SIZE - 1);
+        return total == MAX_SIZE - 1;
     }
 
     //TODO: lepsze byłoby użycie wyjątków zamiast -1
