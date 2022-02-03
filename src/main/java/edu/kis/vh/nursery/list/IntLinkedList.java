@@ -36,7 +36,7 @@ public class IntLinkedList {
         }
     }
 
-    private static final int FAILURE = -1;
+    private static final int FAILURE_VALUE = -1;
     private Node last;
     private int i;
 
@@ -77,7 +77,7 @@ public class IntLinkedList {
      */
     public int top() {
         if (isEmpty())
-            return FAILURE;
+            return FAILURE_VALUE;
         return last.getValue();
     }
 
@@ -88,7 +88,7 @@ public class IntLinkedList {
      */
     public int pop() {
         if (isEmpty())
-            return FAILURE;
+            return FAILURE_VALUE;
         int ret = last.getValue();
         last = last.getPrev();
         return ret;

@@ -1,45 +1,41 @@
 package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
+    private final IntArrayStack dataContainer;
 
-    private static final int SIZE = 12;
-    private static final int INITIAL_VALUE = -1;
-    private static final int FAILURE = -1;
-    private static final int MAX_SIZE = 12;
+    public DefaultCountingOutRhymer(IntArrayStack dataContainer) {
+        this.dataContainer = dataContainer;
+    }
 
-    private final int[] numbers = new int[SIZE];
-    private int total = INITIAL_VALUE;
+    public DefaultCountingOutRhymer() {
+        this(new IntArrayStack());
+    }
 
     //TODO: wyrzucenie wyjątku kiedy nie ma miejsca
     public void countIn(int in) {
-        if (!isFull())
-            numbers[++total] = in;
+        dataContainer.countIn(in);
     }
 
     //TODO: zmienić nazwę na isEmpty?
     public boolean callCheck() {
-        return total == INITIAL_VALUE;
+        return dataContainer.callCheck();
     }
 
     public boolean isFull() {
-        return total == MAX_SIZE - 1;
+        return dataContainer.isFull();
     }
 
     //TODO: lepsze byłoby użycie wyjątków zamiast -1
     protected int peekaboo() {
-        if (callCheck())
-            return FAILURE;
-        return numbers[total];
+        return dataContainer.peekaboo();
     }
 
     //TODO: lepsze byłoby użycie wyjątków zamiast -1
     public int countOut() {
-        if (callCheck())
-            return FAILURE;
-        return numbers[total--];
+        return dataContainer.countOut();
     }
 
     public int getTotal() {
-        return total;
+        return dataContainer.getTotal();
     }
 }
