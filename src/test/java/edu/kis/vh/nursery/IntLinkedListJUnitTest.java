@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.list.IntLinkedList;
+import edu.kis.vh.nursery.int_counting_structures.IntLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 

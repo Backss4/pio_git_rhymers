@@ -1,10 +1,20 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.int_counting_structures.IIntCoutingStructure;
+
 public class HanoiRhymer extends DefaultCountingOutRhymer {
     private int totalRejected = 0;
 
     public int reportRejected() {
         return totalRejected;
+    }
+
+    public HanoiRhymer() {
+        super();
+    }
+
+    public HanoiRhymer(IIntCoutingStructure dataContainer) {
+        super(dataContainer);
     }
 
     @Override

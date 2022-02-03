@@ -1,9 +1,12 @@
 package edu.kis.vh.nursery;
 
-public class DefaultCountingOutRhymer {
-    private final IntArrayStack dataContainer;
+import edu.kis.vh.nursery.int_counting_structures.IIntCoutingStructure;
+import edu.kis.vh.nursery.int_counting_structures.IntArrayStack;
 
-    public DefaultCountingOutRhymer(IntArrayStack dataContainer) {
+public class DefaultCountingOutRhymer {
+    private final IIntCoutingStructure dataContainer;
+
+    public DefaultCountingOutRhymer(IIntCoutingStructure dataContainer) {
         this.dataContainer = dataContainer;
     }
 

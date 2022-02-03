@@ -1,4 +1,4 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.int_counting_structures;
 
 /**
  * Double linked list.
@@ -36,9 +36,8 @@ public class IntLinkedList {
         }
     }
 
-    private static final int FAILURE_VALUE = -1;
+    protected static final int FAILURE_VALUE = -1;
     private Node last;
-    private int i;
 
     /**
      * Pushes value on to the top of the list.
